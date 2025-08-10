@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prince 💖 Ladu - Forever Love</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prince 💖 Ladu - Forever Love</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap');
 
@@ -47,13 +47,22 @@
     }
 
     @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
     }
 
     @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: #ff80ab; }
+      from,
+      to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: #ff80ab;
+      }
     }
 
     /* Photos */
@@ -69,7 +78,7 @@
       width: 220px;
       height: auto;
       border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(255,255,255,0.2);
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
     }
 
     /* Quotes scrolling */
@@ -87,8 +96,12 @@
     }
 
     @keyframes scrollQuotes {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-200%); }
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-200%);
+      }
     }
 
     /* Glowing hearts from bottom */
@@ -114,8 +127,12 @@
 
     /* Glow animation */
     @keyframes glow {
-      from { text-shadow: 0 0 10px #ff80ab; }
-      to { text-shadow: 0 0 20px #ff4081; }
+      from {
+        text-shadow: 0 0 10px #ff80ab;
+      }
+      to {
+        text-shadow: 0 0 20px #ff4081;
+      }
     }
 
     footer {
@@ -127,62 +144,64 @@
   </style>
 </head>
 <body>
-  <audio id="bg-music" src="Tu Maro Dariyo - PagalHits.mp3" loop autoplay></audio>
+  <!-- Audio with controls, loop and autoplay -->
+  <audio
+    id="bg-music"
+    src="Tu Maro Dariyo - PagalHits.mp3"
+    loop
+    autoplay
+    controls
+  ></audio>
 
+  <header>
+    <h1>Prince 💖 princess</h1>
+    <div class="subtitle">Pyaar, Hamesha... Ek Kahani Jo Kabhi Khatm Nahi Hoti 💫</div>
+  </header>
 
-<header>
-  <h1>Prince 💖 princess</h1>
-  <div class="subtitle">Pyaar, Hamesha... Ek Kahani Jo Kabhi Khatm Nahi Hoti 💫</div>
-</header>
+  <!-- 💬 Typing message -->
+  <div class="typing-container" id="typing">
+    Tere bina sab kuch suna suna sa lagta hai... 💌
+  </div>
 
-<!-- 💬 Typing message -->
-<div class="typing-container" id="typing">Tere bina sab kuch suna suna sa lagta hai... 💌</div>
+  <!-- 📸 Photo gallery -->
+  <div class="gallery">
+    <img src="1.jpeg" alt="Prince & Ladu 1" />
+    <img src="2.jpeg" alt="Prince & Ladu 2" />
+    <img src="3.jpeg" alt="Prince & Ladu 3" />
+  </div>
 
-<!-- 📸 Photo gallery -->
-<div class="gallery">
-  <img src="1.jpeg" alt="Prince & Ladu 1">
-  <img src="2.jpeg" alt="Prince & Ladu 2">
-  <img src="3.jpeg" alt="Prince & Ladu 3">
-</div>
+  <!-- 💭 Love Quotes -->
+  <div class="quotes">
+    <div class="quote">"Main tujhmein kho gayi hoon, kutteeeeeee🥺 🐾"</div>
+    <div class="quote">"Jab tu paas hota hai, har lamha ek geet ban jaata hai 🎵"</div>
+    <div class="quote">"Tere bina toh sab kuchh adhoora hai 🥺"</div>
+    <div class="quote">"Tera muskurana meri zindagi ka reason hai 😍"</div>
+    <div class="quote">"Har janam tujhi ko chaahungi, Prince 🐶"</div>
+    <div class="quote">"Tu sirf pyaar nahi, meri dua hai 🌠"</div>
+  </div>
 
-<!-- 💭 Love Quotes -->
-<div class="quotes">
-  <div class="quote">"Main tujhmein kho gayi hoon, kutteeeeeee🥺 🐾"</div>
-  <div class="quote">"Jab tu paas hota hai, har lamha ek geet ban jaata hai 🎵"</div>
-  <div class="quote">"Tere bina toh sab kuchh adhoora hai 🥺"</div>
-  <div class="quote">"Tera muskurana meri zindagi ka reason hai 😍"</div>
-  <div class="quote">"Har janam tujhi ko chaahungi, Prince 🐶"</div>
-  <div class="quote">"Tu sirf pyaar nahi, meri dua hai 🌠"</div>
-</div>
+  <!-- 💞 Footer -->
+  <footer>
+    Tumhari Kutri 🐾 ka pyaar — hamesha, sadaa ke liye 💕<br />
+    Prince & Ladu 🌙❤️ 2025
+  </footer>
 
-<!-- 💞 Footer -->
-<footer>
-  Tumhari Kutri 🐾 ka pyaar — hamesha, sadaa ke liye 💕<br>
-  Prince & Ladu 🌙❤️ 2025
-</footer>
+  <!-- 💖 Floating hearts -->
+  <script>
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.classList.add('heart-bubble');
+      heart.textContent = '💖';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.fontSize = 16 + Math.random() * 20 + 'px';
+      heart.style.animationDuration = 5 + Math.random() * 3 + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }, 300);
 
-<!-- 💖 Floating hearts -->
-<script>
-  setInterval(() => {
-    const heart = document.createElement('div');
-    heart.classList.add('heart-bubble');
-    heart.textContent = '💖';
-    heart.style.left = Math.random() * window.innerWidth + 'px';
-    heart.style.fontSize = (16 + Math.random() * 20) + 'px';
-    heart.style.animationDuration = (5 + Math.random() * 3) + 's';
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 8000);
-  }, 300);
-
-  // Ensure music plays after first user click (browsers restrict autoplay)
-  const music = document.getElementById('bg-music');
-  document.addEventListener('click', () => music.play());
-</script>
-
+    // Ensure music plays after first user click (browsers restrict autoplay)
+    const music = document.getElementById('bg-music');
+    document.addEventListener('click', () => music.play());
+  </script>
 </body>
 </html>
-
-
-
-
-  
