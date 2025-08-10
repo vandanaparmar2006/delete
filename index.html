@@ -3,9 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete</title>
+    <title>Prince 💖 Ladu - Forever Love</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px 20px;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      color: #ff80ab;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #ffc1e3;
+      margin-bottom: 20px;
+    }
+
+    /* Typing message */
+    .typing-container {
+      font-size: 1.4rem;
+      color: #ffb3c6;
+      margin: 30px auto;
+      width: 80%;
+      max-width: 600px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #ff80ab;
+      animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #ff80ab; }
+    }
+
+    /* Photos */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 20px;
+    }
+
+    .gallery img {
+      width: 220px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(255,255,255,0.2);
+    }
+
+    /* Quotes scrolling */
+    .quotes {
+      margin-top: 30px;
+      animation: scrollQuotes 20s linear infinite;
+    }
+
+    .quote {
+      font-size: 1.2rem;
+      margin: 20px 0;
+      font-style: italic;
+      text-align: center;
+      opacity: 0.9;
+    }
+
+    @keyframes scrollQuotes {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-200%); }
+    }
+
+    /* Glowing hearts from bottom */
+    .heart-bubble {
+      position: fixed;
+      bottom: -20px;
+      font-size: 24px;
+      color: #ff80ab;
+      animation: bubble 8s ease-in infinite;
+      pointer-events: none;
+    }
+
+    @keyframes bubble {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    /* Glow animation */
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff80ab; }
+      to { text-shadow: 0 0 20px #ff4081; }
+    }
+
+    footer {
+      margin: 50px 0 30px;
+      font-size: 0.9rem;
+      color: #ffb3c6;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <h1>delete code.................01</h1>
+
+<!-- 🎵 Background Music -->
+<audio id="bg-music" src="https://cdn.pixabay.com/download/audio/2022/03/31/audio_849e288c7f.mp3?filename=love-music-11281.mp3" loop autoplay></audio>
+
+<header>
+  <h1>Prince 💖 Ladu</h1>
+  <div class="subtitle">Pyaar, Hamesha... Ek Kahani Jo Kabhi Khatm Nahi Hoti 💫</div>
+</header>
+
+<!-- 💬 Typing message -->
+<div class="typing-container" id="typing">Tere bina sab kuch suna suna sa lagta hai... 💌</div>
+
+<!-- 📸 Photo gallery -->
+<div class="gallery">
+  <img src="photo1.jpg" alt="Prince & Ladu 1">
+  <img src="photo2.jpg" alt="Prince & Ladu 2">
+  <img src="photo3.jpg" alt="Prince & Ladu 3">
+</div>
+
+<!-- 💭 Love Quotes -->
+<div class="quotes">
+  <div class="quote">"Main tujhmein kho gaya hoon, Ladu 🐾"</div>
+  <div class="quote">"Jab tu paas hoti hai, har lamha ek geet ban jaata hai 🎵"</div>
+  <div class="quote">"Tere bina toh kuch bhi adhoora hai 🥺"</div>
+  <div class="quote">"Tera muskurana meri zindagi ka reason hai 😍"</div>
+  <div class="quote">"Har janam tujhi ko chaahungi, Prince 🐶"</div>
+  <div class="quote">"Tu sirf pyaar nahi, meri dua hai 🌠"</div>
+</div>
+
+<!-- 💞 Footer -->
+<footer>
+  Tumhari Kutri 🐾 ka pyaar — hamesha, sadaa ke liye 💕<br>
+  Prince & Ladu 🌙❤️ 2025
+</footer>
+
+<!-- 💖 Floating hearts -->
+<script>
+  setInterval(() => {
+    const heart = document.createElement('div');
+    heart.classList.add('heart-bubble');
+    heart.textContent = '💖';
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.fontSize = (16 + Math.random() * 20) + 'px';
+    heart.style.animationDuration = (5 + Math.random() * 3) + 's';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 8000);
+  }, 300);
+
+  // Ensure music plays after first user click (browsers restrict autoplay)
+  const music = document.getElementById('bg-music');
+  document.addEventListener('click', () => music.play());
+</script>
+
 </body>
 </html>
+
+
+
+
+  
