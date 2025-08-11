@@ -13,6 +13,12 @@
       background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
       color: #fff;
       overflow-x: hidden;
+      animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     header {
@@ -33,7 +39,6 @@
       margin-bottom: 20px;
     }
 
-    /* Typing message */
     .typing-container {
       font-size: 1.4rem;
       color: #ffb3c6;
@@ -47,25 +52,15 @@
     }
 
     @keyframes typing {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
+      from { width: 0; }
+      to { width: 100%; }
     }
 
     @keyframes blink-caret {
-      from,
-      to {
-        border-color: transparent;
-      }
-      50% {
-        border-color: #ff80ab;
-      }
+      from, to { border-color: transparent; }
+      50% { border-color: #ff80ab; }
     }
 
-    /* Photos */
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -81,7 +76,6 @@
       box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
     }
 
-    /* Quotes scrolling */
     .quotes {
       margin-top: 30px;
       animation: scrollQuotes 20s linear infinite;
@@ -96,15 +90,10 @@
     }
 
     @keyframes scrollQuotes {
-      0% {
-        transform: translateY(0);
-      }
-      100% {
-        transform: translateY(-200%);
-      }
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-200%); }
     }
 
-    /* Glowing hearts from bottom */
     .heart-bubble {
       position: fixed;
       bottom: -20px;
@@ -125,14 +114,9 @@
       }
     }
 
-    /* Glow animation */
     @keyframes glow {
-      from {
-        text-shadow: 0 0 10px #ff80ab;
-      }
-      to {
-        text-shadow: 0 0 20px #ff4081;
-      }
+      from { text-shadow: 0 0 10px #ff80ab; }
+      to { text-shadow: 0 0 20px #ff4081; }
     }
 
     footer {
@@ -141,12 +125,17 @@
       color: #ffb3c6;
       text-align: center;
     }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Audio with controls, loop and autoplay -->
-  <audio id="bg-music" src="Tu Maro Dariyo - PagalHits.mp3" autoplay loop muted></audio>
-
+  <!-- ✅ Audio: autoplay muted, will unmute on user interaction -->
+  <audio id="bg-music" src="Tu Maro Dariyo - PagalHits.mp3" autoplay loop muted controls></audio>
 
   <header>
     <h1>Prince 💖 princess</h1>
@@ -160,9 +149,9 @@
 
   <!-- 📸 Photo gallery -->
   <div class="gallery">
-    <img src="1.jpeg" alt="Prince & Ladu 1" />
-    <img src="2.jpeg" alt="Prince & Ladu 2" />
-    <img src="3.jpeg" alt="Prince & Ladu 3" />
+    <img src="1.jpeg" alt="Prince & Ladu 1" loading="lazy" />
+    <img src="2.jpeg" alt="Prince & Ladu 2" loading="lazy" />
+    <img src="3.jpeg" alt="Prince & Ladu 3" loading="lazy" />
   </div>
 
   <!-- 💭 Love Quotes -->
@@ -181,8 +170,9 @@
     Prince & Ladu 🌙❤️ 2025
   </footer>
 
-  <!-- 💖 Floating hearts -->
+  <!-- 💖 Floating hearts + 🔊 Audio activation script -->
   <script>
+    // Floating hearts animation
     setInterval(() => {
       const heart = document.createElement('div');
       heart.classList.add('heart-bubble');
@@ -194,9 +184,17 @@
       setTimeout(() => heart.remove(), 8000);
     }, 300);
 
-    // Ensure music plays after first user click (browsers restrict autoplay)
+    // Auto-unmute & play on user interaction
     const music = document.getElementById('bg-music');
-    document.addEventListener('click', () => music.play());
+    const startMusic = () => {
+      music.muted = false;
+      music.play();
+      document.removeEventListener('click', startMusic);
+      document.removeEventListener('touchstart', startMusic);
+    };
+
+    document.addEventListener('click', startMusic);
+    document.addEventListener('touchstart', startMusic);
   </script>
 </body>
 </html>
